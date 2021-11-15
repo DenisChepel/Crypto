@@ -1,3 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body{
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background: #0B0B0B;
+}
+
 @@include('_header.scss')
 
 @@include('_main.scss')
