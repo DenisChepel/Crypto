@@ -1,4 +1,3 @@
-window.addEventListener('load', function (){
 /*BURGER MENU*/
 
 ///Initiation Variables
@@ -131,7 +130,3 @@ icon.addEventListener( "click", ()=> {
 });
 
 /*BURGER MENU*/
-
-
-})
-
