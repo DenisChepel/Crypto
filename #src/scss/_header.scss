@@ -1,9 +1,11 @@
+/*HEADER*/
+
 .header{
   width: 100%;
   max-width: 100%;
   height: 100px;
-  padding: 0 70px;
-  position: absolute;
+  padding: 0 100px;
+  position: relative;
   top: 0;
   left: 0;
   display: flex;
@@ -23,8 +25,10 @@
 
 .logo{
   z-index: 3;
-  @include center;
-  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 90%;
   max-width: 100%;
   height: auto;
 }
@@ -73,13 +77,11 @@
 }
 
 .navigation_wrap_mob{
-  z-index: 3;
+  z-index: 4;
   position: absolute;
   top: 100px;
   left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center;
   width: 100%;
   max-width: 100%;
   height: auto;
@@ -112,9 +114,7 @@
             color: #FF8C00;
           }
             > li{
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              @include center;
               height: 50px;
             }
         }
@@ -132,7 +132,7 @@
 .header_btn_wrap{
   z-index: 3;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   width: 100%;
   max-width: 100%;
@@ -144,7 +144,7 @@
   height: 56px;
   background: #FF8C00;
   border-radius: 10px;
-  margin: 0 15px;
+  margin: 0 0 0 30px;
   border: none;
   outline: none;
   color: white;
@@ -250,3 +250,5 @@
   }
 }
 /*BURGER*/
+
+/*HEADER*/
