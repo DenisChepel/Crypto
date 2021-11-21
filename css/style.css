@@ -616,6 +616,7 @@ body {
 
 .i_text {
   font-family: "Inter", sans-serif;
+  width: 85px;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -629,7 +630,14 @@ body {
 
 .i_text .green_text {
   font-size: 12px;
-  color: #20BF6B;
+}
+
+.up {
+  color: #20bd6a;
+}
+
+.down {
+  color: #ec4b5b;
 }
 
 /*BLOCK WITH PHONE END*/
@@ -799,6 +807,10 @@ body {
     top: 75%;
     left: 55%;
   }
+
+  .i_text {
+    width: 60px;
+  }
 }
 
 @media screen and (max-width: 810px) {
@@ -825,18 +837,17 @@ body {
   }
 
   .phone_item_f {
-    top: 8%;
-    left: 33%;
+    display: none;
   }
 
   .phone_item_s {
-    top: 30%;
-    right: 45%;
+    top: 28%;
+    right: 44%;
   }
 
   .phone_item_t {
     top: 69%;
-    left: 35%;
+    left: 0%;
   }
 }
 
@@ -873,6 +884,9 @@ body {
   }
 
   .phone_item_f {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     top: 25%;
     left: 45%;
   }
@@ -963,6 +977,21 @@ body {
 }
 
 @media screen and (max-width: 390px) {
+  .title_block_btn_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
   .phone_item_f {
     top: 24%;
     left: 35%;
