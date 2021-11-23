@@ -572,65 +572,42 @@ SocketStreamer.prototype = {
                     else{
                         v = CCC.convertValueToDisplay('', current[key]);
                     }
-                    let el = document.querySelector('[data-coin=' + key + '_' + from +']');
+                    let el_list = document.querySelectorAll('[data-coin=' + key + '_' + from +']');
+                    for(let el of el_list)
                     if (el) {
                         el.textContent = v;
                     }
                 }
-                let elCoinFrom = document.querySelector('[data-coin=PRICE_' + from +']');
-                let elCoinRowFrom = document.querySelector('.coin_row_'+ from);
-                if (elCoinFrom) {
-                    elCoinFrom.classList.remove('up', 'down');
-                }
-                if (elCoinRowFrom) {
-                    elCoinRowFrom.classList.remove('row_up', 'row_down', 'row_unchange')
-                }
-                if( priceDirection == 1 ){
-                    if (elCoinFrom) {
-                        elCoinFrom.classList.add("up");
+
+                let elCoinChange24HourPct = document.querySelectorAll('[data-coin=CHANGE24HOURPCT_' + from +']');
+                for (let i = 0; i < elCoinChange24HourPct.length; i++) {
+                    if (elCoinChange24HourPct[i]) {
+                        elCoinChange24HourPct[i].classList.remove('up', 'down');
                     }
-                    if (elCoinRowFrom) {
-                        elCoinRowFrom.classList.add('row_up')
-                    }
-                }
-                else if( priceDirection == 2 ){
-                    if (elCoinFrom) {
-                        elCoinFrom.classList.add("down");
-                    }
-                    if (elCoinRowFrom) {
-                        elCoinRowFrom.classList.add("row_down");
+                    if (current['PRICE'] > current['OPEN24HOUR']) {
+                        if (elCoinChange24HourPct[i]) {
+                            elCoinChange24HourPct[i].classList.add('up');
+                        }
+                    } else if (current['PRICE'] < current['OPEN24HOUR']) {
+                        if (elCoinChange24HourPct[i]) {
+                            elCoinChange24HourPct[i].classList.add('down');
+                        }
                     }
                 }
 
-                setTimeout(function(){
-                    if (elCoinRowFrom) {
-                        elCoinRowFrom.classList.remove('row_up', 'row_down', 'row_unchange')
+                let elCoinChange24Hour = document.querySelectorAll('[data-coin=CHANGE24HOUR_' + from +']');
+                for (let i = 0; i < elCoinChange24Hour.length; i++) {
+                    if (elCoinChange24Hour[i]) {
+                        elCoinChange24Hour[i].classList.remove('up', 'down');
                     }
-                }, 1000);
-
-                let elCoinTrendFrom = document.querySelector('[data-coin=trend_' + from +']');
-                if (elCoinTrendFrom) {
-                    elCoinTrendFrom.classList.remove('triangle_up', 'triangle_down')
-                }
-                let elCoinChange24Hour = document.querySelector('[data-coin=CHANGE24HOURPCT_' + from +']');
-                if (elCoinChange24Hour) {
-                    elCoinChange24Hour.classList.remove('up', 'down');
-                }
-
-                if( current['PRICE'] > current['OPEN24HOUR'] ){
-                    if (elCoinTrendFrom) {
-                        elCoinTrendFrom.classList.add('triangle_up')
-                    }
-                    if (elCoinChange24Hour) {
-                        elCoinChange24Hour.classList.add('up');
-                    }
-                }
-                else if( current['PRICE'] < current['OPEN24HOUR'] ){
-                    if (elCoinTrendFrom) {
-                        elCoinTrendFrom.classList.add('triangle_down')
-                    }
-                    if (elCoinChange24Hour) {
-                        elCoinChange24Hour.classList.add('down');
+                    if (current['PRICE'] > current['OPEN24HOUR']) {
+                        if (elCoinChange24Hour[i]) {
+                            elCoinChange24Hour[i].classList.add('up');
+                        }
+                    } else if (current['PRICE'] < current['OPEN24HOUR']) {
+                        if (elCoinChange24Hour[i]) {
+                            elCoinChange24Hour[i].classList.add('down');
+                        }
                     }
                 }
                 let elPriceRur = document.querySelector('.price_rur_'+ from);
@@ -655,6 +632,7 @@ SocketStreamer.prototype = {
 new SocketStreamer({
     coins:"BTC,ETH,LTC,DASH,DOT"
 });
+
 
 /*CRYPTOCURRENCY RATE END*/
 
