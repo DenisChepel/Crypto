@@ -28,7 +28,7 @@ $(function(){
         return false;
     },"Incorrect email");
 
-    $.validator.addMethod("password",function(value,element) {
+    $.validator.addMethod("password_reg",function(value,element) {
         if(this.optional(element))
         {
          return true;
@@ -50,8 +50,8 @@ $(function(){
                 minlength: 2
 
             },
-            password: {
-                password: true,
+            password_reg: {
+                password_reg: true,
                 required: true,
             },
             email: {
@@ -69,7 +69,7 @@ $(function(){
             l_name: {
                 required: "This field is required"
             },
-            password: {
+            password_reg: {
                 required: "This field is required"
             },
             email: {
@@ -95,10 +95,11 @@ $(function(){
                 .addClass('valid')
         }
     })
+
     $(".form_back").validate({
         rules: {
-            password: {
-                password: true,
+            password_log: {
+                password_log: true,
                 required: true,
             },
             email: {
@@ -107,7 +108,7 @@ $(function(){
             },
         },
         messages: {
-            password: {
+            password_log: {
                 required: "This field is required"
             },
             email: {
