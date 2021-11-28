@@ -1621,27 +1621,64 @@ body {
 
 /*COMMON STYLES*/
 
-/*
-@media screen and (max-width: 1250px){
+/*404*/
 
-}
-@media screen and (max-width: 1000px){
-
-}
-@media screen and (max-width: 810px){
-
-}
-@media screen and (max-width: 650px){
-
-}
-@media screen and (max-width: 500px){
-
-}
-@media screen and (max-width: 390px){
-
+.er_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  max-width: 100%;
 }
 
-*/
+.er_title {
+  font-family: Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 90px;
+  text-align: center;
+  color: #FFA825;
+  margin-top: 50px;
+}
+
+.er_text {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  text-align: center;
+  color: #949494;
+  margin-top: 20px;
+}
+
+.er_sub_text {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  text-align: center;
+  color: #949494;
+  margin-top: 20px;
+}
+
+.er_sub_text:last-child {
+  font-size: 25px;
+}
+
+.er_link {
+  text-decoration: none;
+  color: #FFA825;
+}
+
+/*404 END*/
 
 @media screen and (max-width: 1250px) {
   .first_screen {
